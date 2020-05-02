@@ -12,7 +12,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test: path.join(__dirname, '.'),
+                test: /\.css$/,
+                use: [
+                  // style-loader
+                  { loader: 'style-loader' },
+                  // css-loader
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      modules: true
+                    }
+                  },
+                  // sass-loader
+                  { loader: 'sass-loader' }
+                ]
+            },
+            {
+                test: /\.js$/,
                 exclude: /(node_modules)/,
                 use: [{
                     loader: 'babel-loader',
@@ -23,4 +39,19 @@ module.exports = {
             }
         ]
     }
+    //     loaders: [
+    //       {
+    //         exclude: /node_modules/,
+    //         loader: 'babel',
+    //         query: {
+    //           presets: ['react', 'es2015', 'stage-1']
+    //         }
+    //       },
+    //       { test: /\.css$/, loader: "style-loader!css-loader" }
+    //     ]
+    //   },
+    //   resolve: {
+    //     extensions: ['', '.js', '.jsx', '.css']
+    //   }
+
 };
