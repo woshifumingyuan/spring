@@ -19,16 +19,17 @@ if we have two main class
 ```
 
 build blog system
+
 * SSO login
 * Auto login if not log out
 * Create/Modify/Delete/find blog
 
 Tech stack
+
 * spring boot
 * react
 * mysql
 * react
-
-
-
-
+  * react bootstrap
+* webpack
+  * css loader
